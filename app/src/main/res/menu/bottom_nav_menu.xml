@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/discover_frag"
+        android:icon="@drawable/ic_discovery_icon"
+        android:title="@string/discover"/>
+
+    <item
+        android:id="@+id/popular_frag"
+        android:icon="@drawable/ic_popular"
+        android:title="@string/popular"/>
+
+    <item
+        android:id="@+id/top_rated_frag"
+        android:icon="@drawable/ic_top_rated"
+        android:title="@string/top_rated"/>
+
+</menu>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/discover_frag">
+
+    <fragment
+        android:id="@+id/discover_frag"
+        android:name="com.android.movieappcompose.module.discover.view.DiscoverTvShowsFragment"
+        android:label="fragment_discover_tv_shows"
+        tools:layout="@layout/fragment_discover_tv_shows" >
+        <action
+            android:id="@+id/action_discover_frag_to_tvShowDetailsFragment"
+            app:destination="@id/tvShowDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/popular_frag"
+        android:name="com.android.movieappcompose.module.popular.view.PopularMoviesFragment"
+        android:label="fragment_popular_movies"
+        tools:layout="@layout/fragment_popular_movies" >
+        <action
+            android:id="@+id/action_popular_frag_to_tvShowDetailsFragment"
+            app:destination="@id/tvShowDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/top_rated_frag"
+        android:name="com.android.movieappcompose.module.toprated.view.TopRatedTvShowsFragment"
+        android:label="fragment_top_rated_tv_shows"
+        tools:layout="@layout/fragment_top_rated_tv_shows" >
+        <action
+            android:id="@+id/action_top_rated_frag_to_tvShowDetailsFragment"
+            app:destination="@id/tvShowDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowDetailsFragment"
+        android:name="com.android.movieappcompose.module.tvshowdetails.TvShowDetailsFragment"
+        android:label="fragment_tv_show_details"
+        tools:layout="@layout/fragment_tv_show_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.android.movieappcompose.rest.data.Movie"
+            app:nullable="true" />
+    </fragment>
+</navigation>
