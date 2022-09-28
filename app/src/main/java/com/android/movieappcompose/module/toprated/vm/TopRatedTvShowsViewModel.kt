@@ -6,6 +6,7 @@ import com.android.movieappcompose.module.base.BaseViewModel
 import com.android.movieappcompose.network_utils.LoadingStatus
 import com.android.movieappcompose.repository.MovieRepository
 import com.android.movieappcompose.repository.Result
+import com.android.movieappcompose.rest.data.Movie
 import com.android.movieappcompose.rest.data.Movies
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxkotlin.subscribeBy
@@ -15,8 +16,8 @@ import javax.inject.Inject
 class TopRatedTvShowsViewModel @Inject constructor(private val movieRepository: MovieRepository) :
     BaseViewModel() {
 
-    private var _movies = MutableLiveData<Movies>()
-    val movies: LiveData<Movies>
+    private var _movies = MutableLiveData<List<Movie>>()
+    val movies: LiveData<List<Movie>>
         get() = _movies
 
 
@@ -26,7 +27,7 @@ class TopRatedTvShowsViewModel @Inject constructor(private val movieRepository: 
             .subscribeBy {
                 when (it) {
                     is Result.Success -> {
-                        _movies.value = it.data
+                        _movies.value = it.data.movies
                         _loadingState.value = LoadingStatus.Success
                     }
 
