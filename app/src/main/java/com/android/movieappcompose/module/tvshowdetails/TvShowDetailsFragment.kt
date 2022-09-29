@@ -17,7 +17,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TvShowDetailsFragment : Fragment() {
 
-    private val viewModel: TvShowDetailsViewModel by viewModels()
     private lateinit var binding: FragmentTvShowDetailsBinding
     private val args: TvShowDetailsFragmentArgs by navArgs()
 
